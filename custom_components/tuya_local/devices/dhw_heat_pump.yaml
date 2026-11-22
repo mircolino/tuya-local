@@ -1,0 +1,286 @@
+# Product page: https://www.mitsubishi-termal.it/en/product/hotwater-monoblock-200-300-400-litres-r290-ducted-series/
+#
+# Home Assistant Log Local DPs: 
+# {
+#   "updated_at": 1794946743.7739077,
+#   "1": true,
+#   "2": 52,
+#   "3": 51,
+#   "4": "auto",
+#   "21": 0
+# }
+#
+# Query Device Details:
+# {
+#   "id": "bff2f156204d83010achfa",
+#   "model": "HY473328",
+#   "name": "DHW heat pump",
+#   "product_id": "tngxiuemnvg16rzl",
+#   "product_name": "CSWB100L CoolStar"
+# }
+#
+# Query Things Data Model:
+# {
+#   "result": {
+#     "model": {
+# 	  "modelId": "000004d65i",
+# 	  "services": [
+# 		{
+# 		  "actions": [],
+# 		  "code": "",
+# 		  "description": "",
+# 		  "events": [],
+# 		  "name": "默认服务",
+# 		  "properties": [
+# 			{
+# 			  "abilityId": 1,
+# 			  "accessMode": "rw",
+# 			  "code": "switch",
+# 			  "description": "",
+# 			  "name": "开关",
+# 			  "typeSpec": {
+# 				"type": "bool"
+# 			  }
+# 			},
+# 			{
+# 			  "abilityId": 2,
+# 			  "accessMode": "rw",
+# 			  "code": "temp_set",
+# 			  "description": "",
+# 			  "name": "温度设置",
+# 			  "typeSpec": {
+# 				"type": "value",
+# 				"max": 70,
+# 				"min": 35,
+# 				"scale": 0,
+# 				"step": 1,
+# 				"unit": "℃"
+# 			  }
+# 			},
+# 			{
+# 			  "abilityId": 3,
+# 			  "accessMode": "ro",
+# 			  "code": "temp_current",
+# 			  "description": "",
+# 			  "name": "当前温度",
+# 			  "typeSpec": {
+# 				"type": "value",
+# 				"max": 100,
+# 				"min": -20,
+# 				"scale": 0,
+# 				"step": 1,
+# 				"unit": "℃"
+# 			  }
+# 			},
+# 			{
+# 			  "abilityId": 4,
+# 			  "accessMode": "rw",
+# 			  "code": "mode",
+# 			  "description": "自动模式；节能模式；混合模式；电热模式；通风模式",
+# 			  "name": "模式",
+# 			  "typeSpec": {
+# 				"type": "enum",
+# 				"range": [
+# 				  "auto",
+# 				  "eco",
+# 				  "mix",
+# 				  "electric",
+# 				  "air"
+# 				]
+# 			  }
+# 			},
+# 			{
+# 			  "abilityId": 21,
+# 			  "accessMode": "ro",
+# 			  "code": "fault",
+# 			  "description": "P01 水箱下部感温故障;P02 水箱上部感温故障;P03 盘管感温故障;P04 回气感温故障 ;P05 环境感温故障 ;P06 冬季防冻保护 ;E01 高压保护; E02 低压保护 ;E03 过热保护 PA 压机工作极限环境或水箱温度保护; E08 通讯故障 ;E6 电子阳极报警 ;EA9 单片机ROM故障;CS  除霜/冷媒回收",
+# 			  "extensions": {
+# 				"scope": "fault"
+# 			  },
+# 			  "name": "故障告警",
+# 			  "typeSpec": {
+# 				"type": "bitmap",
+# 				"label": [
+# 				  "P01",
+# 				  "P02",
+# 				  "P03",
+# 				  "P04",
+# 				  "P05",
+# 				  "P06",
+# 				  "E01",
+# 				  "E02",
+# 				  "E03",
+# 				  "PA",
+# 				  "E08",
+# 				  "E6",
+# 				  "EA9",
+# 				  "CS"
+# 				],
+# 				"maxlen": 14
+# 			  }
+# 			},
+# 			{
+# 			  "abilityId": 101,
+# 			  "accessMode": "ro",
+# 			  "code": "ai_mark",
+# 			  "description": "AI完成数据记录标志 0-未完成，1-完成",
+# 			  "name": "ai_mark",
+# 			  "typeSpec": {
+# 				"type": "bool"
+# 			  }
+# 			},
+# 			{
+# 			  "abilityId": 102,
+# 			  "accessMode": "ro",
+# 			  "code": "ai_start_time",
+# 			  "description": "AI智能开启时间 00-23h",
+# 			  "name": "ai_start_time",
+# 			  "typeSpec": {
+# 				"type": "value",
+# 				"max": 23,
+# 				"min": 0,
+# 				"scale": 0,
+# 				"step": 1,
+# 				"unit": "o'clock"
+# 			  }
+# 			},
+# 			{
+# 			  "abilityId": 103,
+# 			  "accessMode": "ro",
+# 			  "code": "ai_temp_setting",
+# 			  "description": "AI智能设定温度 35-70℃",
+# 			  "name": "ai_temp_setting",
+# 			  "typeSpec": {
+# 				"type": "value",
+# 				"max": 70,
+# 				"min": 35,
+# 				"scale": 0,
+# 				"step": 1,
+# 				"unit": "℃"
+# 			  }
+# 			}
+# 		  ]
+# 		}
+# 	  ]
+# 	}
+#   }
+# }
+
+name: DHW Heat Pump
+products:
+  - id: tngxiuemnvg16rzl
+    manufacturer: Mitsubishi Heavy Industries
+    model: TWMBS 2x03 J-1
+    model_id: 000004d65i
+entities:
+  - entity: water_heater
+    dps:
+      - id: 1
+        type: boolean
+        name: operation_mode
+        mapping:
+          - dps_val: false
+            value: "off"
+          - dps_val: true
+            constraint: work_mode
+            conditions:
+              - dps_val: auto
+                value: "Auto"
+              - dps_val: eco
+                value: eco
+              - dps_val: mix
+                value: performance
+              - dps_val: electric
+                value: electric
+              - dps_val: air
+                value: "Fan"
+      - id: 2
+        type: integer
+        name: temperature
+        unit: C
+        range:
+          min: 35
+          max: 70
+      - id: 3
+        type: integer
+        name: current_temperature
+        range:
+          min: -20
+          max: 100
+      - id: 4
+        type: string
+        name: work_mode
+        hidden: true
+  - entity: binary_sensor
+    name: State
+    icon: mdi:wrench-outline
+    class: problem
+    category: diagnostic
+    dps:
+      - id: 21
+        type: bitfield
+        name: sensor
+        mapping:
+          - dps_val: 0
+            value: false
+          - value: true
+      - id: 21
+        type: bitfield
+        name: fault_code
+      - id: 21
+        type: bitfield
+        name: description
+        mapping:
+          - dps_val: 0
+            value: ok
+          - dps_val: 1
+            value: P01 Lower water tank temperature sensor fault
+          - dps_val: 2
+            value: P02 Upper water tank temperature sensor fault
+          - dps_val: 4
+            value: P03 Coil temperature sensor fault
+          - dps_val: 8
+            value: P04 Return gas temperature sensor fault
+          - dps_val: 16
+            value: P05 Ambient temperature sensor fault
+          - dps_val: 32
+            value: P06 Winter antifreeze protection
+          - dps_val: 64
+            value: E01 High pressure protection
+          - dps_val: 128
+            value: E02 Low pressure protection
+          - dps_val: 256
+            value: E03 Overheat protection
+          - dps_val: 512
+            value: PA Compressor limit or water tank temperature protection
+          - dps_val: 1024
+            value: E08 Communication fault
+          - dps_val: 2048
+            value: E06 Anode Alarm
+          - dps_val: 4096
+            value: EA9 Microcontroller ROM fault
+          - dps_val: 8192
+            value: CS Defrosting / Refrigerant recovery
+#  - entity: binary_sensor
+#    name: AI data recorded
+#    icon: mdi:check-circle-outline
+#    dps:
+#      - id: 101
+#        type: boolean
+#        name: sensor
+#  - entity: sensor
+#    name: AI suggested time
+#    icon: mdi:clock-start
+#    dps:
+#      - id: 102
+#        type: integer
+#        name: sensor
+#        unit: h
+#  - entity: sensor
+#    name: AI suggested temperature
+#    icon: mdi:thermometer-water
+#    dps:
+#      - id: 103
+#        type: integer
+#        name: sensor
+#        unit: C
